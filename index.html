@@ -195,29 +195,32 @@
                         </div>
                         <div class="methodology-card">
                             <h3>Phase 2: The "Peaking" Factor</h3>
-                            <p>Metrics are normalized to a 0-10 scale. To protect specialized athletes (e.g., Marathoners), 
-                                we apply a <strong>Specialist Peak Bonus</strong>. Hitting a 10.0 in any category 
-                                prevents a sport from being penalized for zeros in unrelated technical traits.</p>
+                            <p>Metrics are normalized against clinical limits. We apply a <strong>60/40 Weighted Sum</strong> 
+                                of Physiological ($\mathcal{P}$) and Technical ($\mathcal{T}$) traits, then add a 
+                                <strong>Specialist Peak Bonus</strong> ($\beta$) to reward elite single-metric performance.</p>
                             <div class="math-block">
-                                $$S_{base} = (0.6\sum P + 0.4\sum T) + Bonus_{peak}$$
+                                $$S_{base} = \left( 0.6 \sum_{i=1}^5 p_i + 0.4 \sum_{j=1}^5 t_j \right) + \beta$$
                             </div>
+                            <p style="font-size: 0.8rem; margin-top: 0.5rem; color: var(--text-secondary);">
+                                $\mathcal{P}$: Aerobic, Force, Power, Speed, Agility | $\mathcal{T}$: Flex, Stress, Durability, React, Tactical
+                            </p>
                         </div>
                         <div class="methodology-card">
-                            <h3>Phase 3: Scientific Multipliers</h3>
-                            <p>The base score is modified by a weighted <strong>Intensity Multiplier</strong>: 
-                                40% Metabolic Rate (METs), 30% Biomechanical Complexity (DoF), 20% G-Force/Trauma, 
-                                and 10% Market Scarcity (Global Depth).</p>
+                            <h3>Phase 3: Intensity Multiplier</h3>
+                            <p>The base score is scaled by a weighted <strong>Intensity Multiplier</strong> ($\mathcal{M}$), 
+                                accounting for Metabolic Rate ($m$), Biomechanics ($d$), trauma G-force ($g$), 
+                                and Market Scarcity ($s$).</p>
                             <div class="math-block">
-                                $$Mult = \sum (Factor_i \times Weight_i)$$
+                                $$\mathcal{M} = 0.4m + 0.3d + 0.2g + 0.1s$$
                             </div>
                         </div>
                         <div class="methodology-card">
                             <h3>Phase 4: Matrix Normalization</h3>
                             <p>To maintain a strict <strong>0-100 Matrix Scale</strong>, the result is calibrated 
-                                against a <strong>Theoretical Human Maximum</strong> (Anchor: 1.65). This ensures 
-                                that a 100.0 represents the absolute peak of known multi-dimensional athleticism.</p>
+                                against a <strong>Theoretical Human Maximum</strong> ($\alpha = 1.65$). This ensures 
+                                100.0 represents the absolute peak of multidimensional athleticism.</p>
                             <div class="math-block">
-                                $$Total = \frac{S_{base} \times Mult}{Anchor} \times 10$$
+                                $$Score_{total} = \frac{S_{base} \times \mathcal{M}}{\alpha} \times 10$$
                             </div>
                         </div>
                     </div>
