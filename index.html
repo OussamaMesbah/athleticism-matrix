@@ -188,36 +188,37 @@
                     <div class="methodology-grid">
                         <div class="methodology-card">
                             <h3>Phase 1: Meta-Analysis</h3>
-                            <p>Since real-time biometric sensor data is rarely public across all 100 sports, we replace
-                                them with <strong>Meta-Analysis Metrics</strong>. We treat peer-reviewed physiological
-                                profiles (e.g., PLOS One, PubMed) and historical draft combine data (NFL/NBA/NHL) as our
-                                "virtual sensors."</p>
+                            <p>We treat peer-reviewed physiological profiles (e.g., PubMed, PLOS One) and historical 
+                                draft combine data (NFL/NBA/NHL) as "virtual sensors." Where hard telemetry is 
+                                unavailable, we apply <strong>Physiological Archetypes</strong> grounded in 
+                                biomechanical similarity.</p>
                         </div>
                         <div class="methodology-card">
-                            <h3>Phase 2: Normalization & Weighting</h3>
-                            <p>Metrics are normalized against clinical "Human Limits" to a 0-10 scale. We then 
-                                apply a <strong>60/40 Weighted Sum</strong> (60% Physiological / 40% Technical) 
-                                and calibrate the final result to a strict <strong>0-100 Matrix Scale</strong>.</p>
+                            <h3>Phase 2: The "Peaking" Factor</h3>
+                            <p>Metrics are normalized to a 0-10 scale. To protect specialized athletes (e.g., Marathoners), 
+                                we apply a <strong>Specialist Peak Bonus</strong>. Hitting a 10.0 in any category 
+                                prevents a sport from being penalized for zeros in unrelated technical traits.</p>
                             <div class="math-block">
-                                $$Score = \frac{S_{weighted} \times Mult}{Max_{theoretical}} \times 100$$
+                                $$S_{base} = (0.6\sum P + 0.4\sum T) + Bonus_{peak}$$
                             </div>
                         </div>
                         <div class="methodology-card">
-                            <h3>Phase 3: Objective Weighting</h3>
-                            <p>To ensure objectivity, we apply data-driven multipliers for METs, Biomechanical 
-                                Complexity (DoF), and G-Force. Every sport also includes an <strong>Evidence Quality 
-                                Rating</strong> based on the reliability of the source data (Combine vs. Inference).</p>
-                            <p style="margin-top: 1rem;"><em>Goal: Absolute physiological and statistical transparency.</em></p>
+                            <h3>Phase 3: Scientific Multipliers</h3>
+                            <p>The base score is modified by a weighted <strong>Intensity Multiplier</strong>: 
+                                40% Metabolic Rate (METs), 30% Biomechanical Complexity (DoF), 20% G-Force/Trauma, 
+                                and 10% Market Scarcity (Global Depth).</p>
+                            <div class="math-block">
+                                $$Mult = \sum (Factor_i \times Weight_i)$$
+                            </div>
                         </div>
                         <div class="methodology-card">
-                            <h3>Top 10 Evidence Base</h3>
-                            <ul id="top-10-justifications" style="list-style:none; margin-top:1rem;">
-                                <li><strong>Combat Elite:</strong> UFC PI data tracks 500+ elite fighters using force plates and Omegawave.</li>
-                                <li><strong>Gymnastics:</strong> Kinematic trajectory analysis for absolute force-to-weight and spatial DoF.</li>
-                                <li><strong>Rugby/Football:</strong> Micro-telemetry tracking of impact G-loads and repeated-sprint exhaustion.</li>
-                                <li><strong>F1 Racing:</strong> Sustained 160-180 BPM heart rate monitoring under 5G multi-axial neck loads.</li>
-                                <li><strong>Endurance Elite:</strong> Longitudinal metabolic studies of VO2 max utilization and skeletal durability.</li>
-                            </ul>
+                            <h3>Phase 4: Matrix Normalization</h3>
+                            <p>To maintain a strict <strong>0-100 Matrix Scale</strong>, the result is calibrated 
+                                against a <strong>Theoretical Human Maximum</strong> (Anchor: 1.65). This ensures 
+                                that a 100.0 represents the absolute peak of known multi-dimensional athleticism.</p>
+                            <div class="math-block">
+                                $$Total = \frac{S_{base} \times Mult}{Anchor} \times 10$$
+                            </div>
                         </div>
                     </div>
                 </div>
