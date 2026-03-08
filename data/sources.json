@@ -1,0 +1,69 @@
+{
+    "endurance": {
+        "metric": "VO2 Max (ml/kg/min)",
+        "sources": [
+            "Haugen et al. (2018): 'The Aerobic Capacity of Elite Endurance Athletes'",
+            "Sandbakk & Holmberg (2017): 'Physiological and Biomechanical Determinants of XC Skiing'",
+            "Blummenfelt (2026): Record laboratory test (101.1 ml/kg/min)"
+        ],
+        "benchmarks": {
+            "XC Skiing": "80-95",
+            "Marathon": "75-85",
+            "Soccer": "58-68",
+            "Weightlifting": "40-50"
+        }
+    },
+    "strength": {
+        "metric": "Functional Power-to-Weight Ratio",
+        "sources": [
+            "IPF (2023) Wilks Coefficient Data",
+            "NCAA Strength & Conditioning: Elite Athlete Benchmarks by Position"
+        ]
+    },
+    "power": {
+        "metric": "Vertical Jump (inches)",
+        "sources": [
+            "NBA Combine Data (2000-2024)",
+            "NFL Combine Historical Database",
+            "García-Ramos et al. (2016): 'The Vertical Jump in Professional Soccer and Tennis'"
+        ],
+        "benchmarks": {
+            "NBA Elite": "35-42",
+            "NFL Vertical": "33-46",
+            "Soccer D1": "24-28"
+        }
+    },
+    "speed": {
+        "metric": "40-yard Sprint (seconds)",
+        "sources": [
+            "NFL Scouting Combine Historical Database",
+            "World Athletics: 10m/s baseline translations for track sprinters"
+        ]
+    },
+    "durability": {
+        "metric": "Injury Incidence Rate per 1000 Athlete Exposures (AE)",
+        "sources": [
+            "Hootman et al. (2007): 'Epidemiology of Collegiate Injuries'",
+            "UFC PI Performance Report (2021): Combat Sport Traumatic Incidence",
+            "NCAA Injury Surveillance System (2015-2019)"
+        ],
+        "benchmarks": {
+            "American Football": "35.9 (Game)",
+            "Wrestling": "13.8 (Mean)",
+            "Soccer": "16.4 (Game)",
+            "Baseball": "5.8 (Game)"
+        }
+    },
+    "hand_eye": {
+        "metric": "Simple Reaction Time (ms)",
+        "sources": [
+            "Parrish et al. (2022): 'Reaction Time in Professional Baseball and Hockey'",
+            "F1 Telemetry Benchmarks for Starting Reactions"
+        ],
+        "benchmarks": {
+            "F1 Start": "150-220",
+            "Track Start": "170-190",
+            "General Pro": "160-210"
+        }
+    }
+}

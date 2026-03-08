@@ -1,0 +1,191 @@
+{
+    "metadata": {
+        "title": "Comprehensive Scientific Benchmarks for Athleticism Matrix",
+        "description": "Granular data points extracted from meta-analyses for objective verification.",
+        "units": {
+            "endurance": "ml/kg/min (VO2 Max)",
+            "power": "inches (Vertical Jump)",
+            "durability": "IIR (Injuries per 1000 AE)",
+            "neuro": "ms (Simple Reaction Time)"
+        }
+    },
+    "endurance_vo2max_records": [
+        {
+            "athlete": "Kristian Blummenfelt",
+            "sport": "Triathlon",
+            "value": 101.1
+        },
+        {
+            "athlete": "Oskar Svendsen",
+            "sport": "Cycling",
+            "value": 97.5
+        },
+        {
+            "athlete": "Bjørn Dæhlie",
+            "sport": "XC Skiing",
+            "value": 96.0
+        },
+        {
+            "athlete": "Espen Harald Bjerke",
+            "sport": "XC Skiing",
+            "value": 96.0
+        },
+        {
+            "athlete": "Greg LeMond",
+            "sport": "Cycling",
+            "value": 92.5
+        },
+        {
+            "athlete": "Kilian Jornet",
+            "sport": "Ski Mountaineering",
+            "value": 92.0
+        },
+        {
+            "athlete": "Matt Carpenter",
+            "sport": "Marathon",
+            "value": 92.0
+        }
+    ],
+    "nba_combine_vertical_database": [
+        {
+            "year": 2021,
+            "player": "Keon Johnson",
+            "max_vert": 48.0
+        },
+        {
+            "year": 2021,
+            "player": "Jericho Sims",
+            "max_vert": 44.5
+        },
+        {
+            "year": 2013,
+            "player": "D.J. Stephens",
+            "max_vert": 46.0
+        },
+        {
+            "year": 2001,
+            "player": "Kenny Gregory",
+            "max_vert": 45.5
+        },
+        {
+            "year": 2017,
+            "player": "Hamidou Diallo",
+            "max_vert": 44.5
+        },
+        {
+            "year": 2024,
+            "player": "Reed Sheppard",
+            "max_vert": 42.0
+        },
+        {
+            "year": 2024,
+            "player": "Devin Carter",
+            "max_vert": 42.0
+        }
+    ],
+    "nfl_combine_vertical_database": [
+        {
+            "year": 2005,
+            "player": "Gerald Sensabaugh",
+            "value": 46.0
+        },
+        {
+            "year": 2005,
+            "player": "Cameron Wake",
+            "value": 45.5
+        },
+        {
+            "year": 2015,
+            "player": "Chris Conley",
+            "value": 45.0
+        },
+        {
+            "year": 2015,
+            "player": "Byron Jones",
+            "value": 44.5
+        },
+        {
+            "year": 2020,
+            "player": "Donovan Peoples-Jones",
+            "value": 44.5
+        },
+        {
+            "year": 2024,
+            "player": "Malik Washington",
+            "value": 42.5
+        },
+        {
+            "year": 2024,
+            "player": "Elijah Jones",
+            "value": 42.5
+        }
+    ],
+    "injury_incidence_hootman_table": [
+        {
+            "sport": "American Football",
+            "game_rate": 35.9
+        },
+        {
+            "sport": "Wrestling",
+            "game_rate": 26.4
+        },
+        {
+            "sport": "Soccer (Men)",
+            "game_rate": 18.8
+        },
+        {
+            "sport": "Soccer (Women)",
+            "game_rate": 16.4
+        },
+        {
+            "sport": "Basketball (Women)",
+            "game_rate": 12.1
+        },
+        {
+            "sport": "Basketball (Men)",
+            "game_rate": 9.9
+        },
+        {
+            "sport": "Field Hockey",
+            "game_rate": 7.9
+        },
+        {
+            "sport": "Baseball",
+            "game_rate": 5.8
+        },
+        {
+            "sport": "Softball",
+            "game_rate": 4.3
+        },
+        {
+            "sport": "Volleyball",
+            "game_rate": 4.6
+        }
+    ],
+    "reaction_time_neuro_database": [
+        {
+            "sport": "F1 (Lights Out Peak)",
+            "ms": 133.0
+        },
+        {
+            "sport": "F1 (Avg Launch)",
+            "ms": 200.0
+        },
+        {
+            "sport": "Hockey (Pro Audio)",
+            "ms": 160.0
+        },
+        {
+            "sport": "Track (Finals Start)",
+            "ms": 142.0
+        },
+        {
+            "sport": "Baseball Hit (Decision)",
+            "ms": 239.0
+        },
+        {
+            "sport": "Soccer (Goalie Peak)",
+            "ms": 170.0
+        }
+    ]
+}

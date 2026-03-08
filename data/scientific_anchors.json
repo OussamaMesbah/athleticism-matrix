@@ -1,0 +1,41 @@
+{
+    "biomechanics": {
+        "description": "Degrees of Freedom (DoF) and Motor Complexity units.",
+        "archetypes": {
+            "Combat_3D": {"dof": 42, "complexity_index": 9.5},
+            "Acrobatic_3D": {"dof": 48, "complexity_index": 10.0},
+            "Technical_Field": {"dof": 24, "complexity_index": 7.5},
+            "Linear_Endurance": {"dof": 6, "complexity_index": 3.0},
+            "High_Speed_Control": {"dof": 18, "complexity_index": 8.5}
+        }
+    },
+    "trauma_g_load": {
+        "description": "Peak G-force and impact energy (Joules) benchmarks.",
+        "anchors": {
+            "F1_Cornering": {"g_force": 6.5, "trauma_risk": 7.0},
+            "Boxing_Punch": {"g_force": 50.0, "trauma_risk": 10.0},
+            "Rugby_Tackle": {"g_force": 25.0, "trauma_risk": 8.5},
+            "Gymnastics_Landing": {"g_force": 12.0, "trauma_risk": 9.0},
+            "Marathon_Systemic": {"g_force": 1.5, "trauma_risk": 6.0}
+        }
+    },
+    "market_depth": {
+        "description": "Scarcity of Mastery based on global participation and prize money.",
+        "global_pool": {
+            "Soccer": {"participants_millions": 250, "scarcity_index": 10.0},
+            "Basketball": {"participants_millions": 450, "scarcity_index": 9.5},
+            "Tennis": {"participants_millions": 87, "scarcity_index": 8.5},
+            "Boxing": {"participants_millions": 20, "scarcity_index": 9.0},
+            "F1": {"participants_total": 20, "scarcity_index": 10.0},
+            "Darts": {"participants_millions": 1, "scarcity_index": 3.0}
+        }
+    },
+    "iaaf_equivalency": {
+        "description": "Normalized human limit anchors based on World Athletics scoring tables.",
+        "limits": {
+            "speed_100m": {"value": 9.58, "points": 1300},
+            "endurance_vo2": {"value": 101.1, "points": 1300},
+            "power_vertical": {"value": 48.0, "points": 1300}
+        }
+    }
+}

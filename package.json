@@ -1,0 +1,17 @@
+{
+  "name": "sport-ranking",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "chart.js": "^4.5.1",
+    "lucide": "^0.563.0",
+    "vite": "^7.3.1"
+  }
+}

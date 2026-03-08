@@ -1,0 +1,5 @@
+Total Violations Found: 4
+FAILED: Squash agility >= Tennis (9.0 vs 10) - Squash court requires more frequent rapid direction changes
+FAILED: F1 Racing nerve >= Marathon Running (9.92 vs 10) - F1 requires faster reaction times (lower ms)
+FAILED: Boxing nerve > Archery (9.6 vs 9.6) - Combat reaction speed (incoming punches) vs static focus
+FAILED: Tennis hand_eye > Basketball (7.0 vs 8.5) - High speed racket-ball contact

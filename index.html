@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Athleticism Matrix | The Objective Sport Ranking</title>
+    <meta name="description"
+        content="A data-driven ranking of sports difficulty based on peer-reviewed metrics and meta-analysis.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Outfit:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+</head>
+
+<body>
+    <div id="app">
+        <header>
+            <div class="container">
+                <div class="logo">
+                    <span class="accent">Athleticism</span>Matrix
+                </div>
+                <p class="subtitle">Evidence-based "Home Edition" Methodology</p>
+            </div>
+        </header>
+
+        <main>
+            <section class="hero container">
+                <div class="inspiration-tag">Inspired by <a href="https://www.espn.com/espn/page2/sportSkills" target="_blank" rel="noopener noreferrer">ESPN's Sport Skills</a></div>
+                <h1>Beyond Opinion. <br><span class="gradient-text">Pure Performance Metrics.</span></h1>
+                <p>We've evolved the classic ranking concept to be more scientific. By replacing expert opinions with peer-reviewed meta-analysis and biomechanical data, we rank sports on an objective 0-100 scale.</p>
+            </section>
+
+            <section class="disclaimer-section container">
+                <div class="disclaimer-card glass">
+                    <span class="icon">⚖️</span>
+                    <p><strong>Note on Scope:</strong> This matrix ranks the <strong>Athletic & Physiological Demand</strong> of each sport (what the body must sustain). It is <u>not</u> a ranking of how difficult it is to "be great" or succeed professionally. We recognize that sports like <em>Golf</em> or <em>Darts</em> require world-class skill and thousands of hours to master, despite their lower raw physical output.</p>
+                </div>
+            </section>
+
+            <section class="comparison-section container-wide">
+                <div class="comparison-grid">
+                    <div class="card glass">
+                        <h2>Individual Performance Profile</h2>
+                        <div class="controls">
+                            <select id="sport1-select" class="custom-select"></select>
+                            <span class="vs">VS</span>
+                            <select id="sport2-select" class="custom-select"></select>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="radarChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="card glass">
+                        <h2>Family Averages (Context)</h2>
+                        <div class="controls">
+                            <select id="family1-select" class="custom-select"></select>
+                            <span class="vs">VS</span>
+                            <select id="family2-select" class="custom-select"></select>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="familyChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="ranking-section container-wide">
+                <div class="card glass">
+                    <div class="table-header">
+                        <h2>Global Ranking</h2>
+                        <div class="filter-controls">
+                            <select id="family-filter" class="custom-select">
+                                <option value="all">All Families</option>
+                            </select>
+                            <div class="search-box">
+                                <input type="text" id="sport-search" placeholder="Search sport..." class="custom-input">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="table-wrapper">
+                        <table id="ranking-table">
+                            <thead>
+                                <tr>
+                                    <th data-sort="rank">Rank</th>
+                                    <th data-sort="name">Sport</th>
+                                    <th data-sort="total_rank">Total Score</th>
+                                    <th data-sort="endurance">Aerobic Cap.</th>
+                                    <th data-sort="strength">Force Prod.</th>
+                                    <th data-sort="power">Power</th>
+                                    <th data-sort="speed">Speed</th>
+                                    <th data-sort="agility">Agility</th>
+                                    <th data-sort="flexibility">Flexibility</th>
+                                    <th data-sort="nerve">Resilience</th>
+                                    <th data-sort="durability">Durability</th>
+                                    <th data-sort="hand_eye">Visual React.</th>
+                                    <th data-sort="analytic">Tactical Comp.</th>
+                                    <th data-sort="confidence">Conf.</th>
+                                    <th>Info</th>
+                                </tr>
+                            </thead>
+                            <tbody id="ranking-body">
+                                <!-- Data injected here -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Modal for Detailed Breakdown -->
+            <div id="detail-modal" class="modal">
+                <div class="modal-content glass">
+                    <span class="close-button">&times;</span>
+                    <div id="modal-body">
+                        <!-- Detailed data injected here -->
+                    </div>
+                </div>
+            </div>
+
+            <section class="glossary-section container">
+                <div class="card glass">
+                    <h2>Metric Glossary</h2>
+                    <div class="glossary-grid">
+                        <div class="glossary-item">
+                            <h3><span class="icon">🫁</span> Aerobic Capacity</h3>
+                            <p>Maximal oxygen uptake (VO2 Max) and aerobic engine efficiency. <strong>Global
+                                    Peak:</strong> Elite cross-country skiers and distance runners.</p>
+                        </div>
+                        <div class="glossary-item">
+                            <h3><span class="icon">💪</span> Force Production</h3>
+                            <p>Absolute force production relative to body mass. Functional power-to-weight ratio.
+                                <strong>Global Peak:</strong> Olympic weightlifters and gymnasts.
+                            </p>
+                        </div>
+                        <div class="glossary-item">
+                            <h3><span class="icon">💥</span> Power</h3>
+                            <p>Force produced in minimal time (Explosiveness). <strong>Global
+                                    Peak:</strong> Heavyweight boxers and track sprinters.</p>
+                        </div>
+                        <div class="glossary-item">
+                            <h3><span class="icon">⚡</span> Speed</h3>
+                            <p>Top-end linear velocity across ground or water. <strong>Global Peak:</strong>
+                                100m sprinters and speed skaters.</p>
+                        </div>
+                        <div class="glossary-item">
+                            <h3><span class="icon">🔄</span> Agility</h3>
+                            <p>Rapid change of direction and deceleration poise under load. <strong>Global
+                                    Peak:</strong> Soccer wingers and rugby players.</p>
+                        </div>
+                        <div class="glossary-item">
+                            <h3><span class="icon">🧘</span> Flexibility</h3>
+                            <p>Range of motion across major joints without loss of stability. <strong>Global
+                                    Peak:</strong> Artistic gymnasts and divers.</p>
+                        </div>
+                        <div class="glossary-item">
+                            <h3><span class="icon">🧠</span> Resilience</h3>
+                            <p>Performance under extreme psychological pressure or physical danger. <strong>Global
+                                    Peak:</strong> F1 drivers and Big Wave surfers.</p>
+                        </div>
+                        <div class="glossary-item">
+                            <h3><span class="icon">🛡️</span> Durability</h3>
+                            <p>Resilience to physical trauma and performance maintenance through attrition.
+                                <strong>Global Peak:</strong> MMA fighters and Tour de France cyclists.
+                            </p>
+                        </div>
+                        <div class="glossary-item">
+                            <h3><span class="icon">🎯</span> Visual Reaction</h3>
+                            <p>Reaction speed to external stimuli (puck, ball, signal). <strong>Global Peak:</strong>
+                                Baseball hitters and Table Tennis players.</p>
+                        </div>
+                        <div class="glossary-item">
+                            <h3><span class="icon">📈</span> Tactical Complexity</h3>
+                            <p>Strategic evaluation of complex, rapidly changing scenarios. <strong>Global
+                                    Peak:</strong> Tactical playmakers and racing strategists.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="methodology-section container">
+                <div>
+                    <h2>Scientific Methodology</h2>
+                    <div class="methodology-grid">
+                        <div class="methodology-card">
+                            <h3>Phase 1: Meta-Analysis</h3>
+                            <p>Since real-time biometric sensor data is rarely public across all 100 sports, we replace
+                                them with <strong>Meta-Analysis Metrics</strong>. We treat peer-reviewed physiological
+                                profiles (e.g., PLOS One, PubMed) and historical draft combine data (NFL/NBA/NHL) as our
+                                "virtual sensors."</p>
+                        </div>
+                        <div class="methodology-card">
+                            <h3>Phase 2: Normalization & Weighting</h3>
+                            <p>Metrics are normalized against clinical "Human Limits" to a 0-10 scale. We then 
+                                apply a <strong>60/40 Weighted Sum</strong> (60% Physiological / 40% Technical) 
+                                and calibrate the final result to a strict <strong>0-100 Matrix Scale</strong>.</p>
+                            <div class="math-block">
+                                $$Score = \frac{S_{weighted} \times Mult}{Max_{theoretical}} \times 100$$
+                            </div>
+                        </div>
+                        <div class="methodology-card">
+                            <h3>Phase 3: Objective Weighting</h3>
+                            <p>To ensure objectivity, we apply data-driven multipliers for METs, Biomechanical 
+                                Complexity (DoF), and G-Force. Every sport also includes an <strong>Evidence Quality 
+                                Rating</strong> based on the reliability of the source data (Combine vs. Inference).</p>
+                            <p style="margin-top: 1rem;"><em>Goal: Absolute physiological and statistical transparency.</em></p>
+                        </div>
+                        <div class="methodology-card">
+                            <h3>Top 10 Evidence Base</h3>
+                            <ul id="top-10-justifications" style="list-style:none; margin-top:1rem;">
+                                <li><strong>Combat Elite:</strong> UFC PI data tracks 500+ elite fighters using force plates and Omegawave.</li>
+                                <li><strong>Gymnastics:</strong> Kinematic trajectory analysis for absolute force-to-weight and spatial DoF.</li>
+                                <li><strong>Rugby/Football:</strong> Micro-telemetry tracking of impact G-loads and repeated-sprint exhaustion.</li>
+                                <li><strong>F1 Racing:</strong> Sustained 160-180 BPM heart rate monitoring under 5G multi-axial neck loads.</li>
+                                <li><strong>Endurance Elite:</strong> Longitudinal metabolic studies of VO2 max utilization and skeletal durability.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="container">
+                <div style="margin-bottom: 2rem;">
+                    <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="omesbahf" data-color="#FFDD00" data-emoji=""  data-font="Cookie" data-text="Buy me a coffee" data-outline-color="#000000" data-font-color="#000000" data-coffee-color="#ffffff" ></script>
+                </div>
+                <p>&copy; 2026 Athleticism Matrix. Data based on normalized meta-analysis metrics.</p>
+            </div>
+        </footer>
+    </div>
+    <script type="module" src="/main.js"></script>
+</body>
+
+</html>
