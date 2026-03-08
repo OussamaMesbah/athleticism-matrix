@@ -8,7 +8,7 @@ let currentSort = { key: 'total_rank', direction: 'desc' };
 
 async function init() {
     try {
-        const response = await fetch('/ranked_sports.json');
+        const response = await fetch('./ranked_sports.json');
         sportsData = await response.json();
 
         calculateFamilyAverages();
